@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <title>YouTube (India)</title>
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #searchbar{
+            width: 98%;
+            margin: auto;
+            display: flex;
+            padding: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+        #searchbar>img{
+            height: 70px;
+        }
+
+        #searchbar>#searchdiv{
+            height: 50%;
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #searchbar>#searchdiv>input{
+            margin: auto;
+            padding: 10px;
+            width: 600px;
+            border:0.5px solid grey;
+        }
+
+        #searchbar>#searchdiv>button{
+            padding: 10px 25px 10px 25px;
+            margin-right: 20px;
+            border:0.5px solid grey;
+            cursor: pointer;
+        }
+        #icon{
+            display: flex;
+            width: 18%;
+            justify-content: space-between;
+            align-content: center;
+        }
+        #icon>#user{
+            background-color: rgb(202, 243, 243);
+        }
+
+        #sidebar:hover{
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 200%;
+            display: block;
+            border-radius: 0;
+            width: 300px;
+            background-color: rgb(224, 15, 15);
+        }
+
+        #user,#notification,#youtubeapp,#recordvideo,#sidebar{
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+        }
+        .fa-solid{
+            margin: auto;
+            color: rgb(43, 39, 39);
+            
+        }
+        h2{
+            margin-left: 5%;
+        }
+
+        #box{
+            margin: auto;
+            width: 90%;
+            padding: 8.5px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 30px;
+        }
+
+        #box>div{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 3px;
+            border-radius: 4px;
+        }
+
+        #box>div>iframe{
+            width: 100%;
+            
+        }
+
+        #box>div>p{
+            margin-top: -2px;
+        }
+
+        #content{
+            display: flex;
+        }
+
+        #content>h2{
+            margin-right: 30px;
+        }
+        #content>p{
+            padding: 7px 15px 0px 15px;
+            border-radius: 30px;
+            font-weight: 500;
+            border: 0.5px solid grey;
+            margin-right: 30px;
+        }
+        #content>p:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+
+        .dropbtn {
+            display: block;
+            background-color: white;
+            color:black;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 400;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            border-radius: 40px;
+            scale: 1.2;
+            background-color: gainsboro;
+        }
+
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            background-color: #f1f1f1;
+            top: 80px;
+            padding: 30px 0px 30px 0px;
+            min-width: 210px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            height: 100%;
+            transition: 0.5s;
+        }
+
+        .dropdown-content div{
+            width: 100%;
+            display: flex;
+        }
+
+        .dropdown-content div:hover{
+            background-color: gainsboro;
+        }
+
+        .dropdown-content div i{
+            padding: 0;
+        }
+
+        .dropdown-content div div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20%;
+            margin-right: 5%;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            
+            
+        }
+
+        .dropdown a:hover {background-color: #ddd;}
+
+        .show {display: block;}
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <button onclick="myFunction()" class="dropbtn">☰</button>
+    <div id="myDropdown" class="dropdown-content">
+      <div><div><i class="fa-solid fa-house"></i></div><a href = "#section1">  Home</a></div>
+      <div><div><i class="fa-brands fa-internet-explorer"></i></div><a href = "#section2">Explore</a></div>
+      <div><div><i class="fa-solid fa-paperclip-vertical"></i></div><a href = "#section4">  Shorts</a></div>
+      <div><div><i class="fa-solid fa-album-collection"></i> </div><a href = "#section5"> Subscription</a></div>
+      <div><div><i class="fa-solid fa-photo-film"></i></div><a href = "#section6">  Library</a></div>
+      <div><div><i class="fa-solid fa-clock-rotate-left"></i> </div><a href = "#section1"> History</a></div>
+      <div><div><i class="fa-solid fa-video"></i></div><a href = "#section2">  Your Video</a></div>
+      <div><div><i class="fa-solid fa-film"></i></div><a href = "#section4">  Your Movie</a></div>
+      <div><div><i class="fa-regular fa-timer"></i></div><a href = "#section5">  Watch Later</a></div>
+      <div><div><i class="fa-regular fa-thumbs-up"></i> </div><a href = "#section6"> Like Video</a></div>
+      
+    </div>
+
+
+
+
+
+
+    <div id = "searchbar">
+        <div id = "sidebar">
+            <i class="fa-solid fa-grip-lines"></i>
+        </div>
+        <img src = "https://www.theindianwire.com/wp-content/uploads/2017/08/youtube_logo_new_official_1504077880072.jpg" alt = "logo"/>
+        <div id = "searchdiv">
+            <input type = "text" id = "query" placeholder = "Enter Your Search">
+            <button onClick = "search()"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+            <i class="fa-solid fa-microphone"></i>
+        </div>
+
+        <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+
+        <div id = "icon">
+
+        
+            <div id = "recordvideo">
+                <i class="fa-solid fa-video-plus"></i>
+            </div>
+            <div id = "youtubeapp">
+                <i class="fa-solid fa-grid"></i>
+            </div>
+
+            <div id = "notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            
+            <div id = "user">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+        </div>
+        
+    </div>
+    <div id = "content">
+        <h2>Popular Trending Video (India)</h2>
+        <p>All</p>
+        <p>Mix</p>
+        <p>Music</p>
+        <p>Aamir Khan</p>
+        <p>T-series</p>
+        <p>Arjit Singh</p>
+        <p>Comedy</p>
+        <p>Live</p>
+        <p>Salman Khan</p>
+    </div>
+       
+    <div id = "box">
+        
+
+    </div>
+</body>
+</html>
+
+<script>
+
+function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+
+let showdata = async() =>{
+
+    const api = "AIzaSyAMAFwvqLc9jee8bzxI5o9verFNt4NAEYE"
+    let link = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&regionCode=IN&key=${api}`
+
+    let res = await fetch(link);
+
+    let data = await res.json();
+    console.log(data);
+    append(data.items)
+}
+
+showdata();
+
+let search = async () => {
+    let query = document.getElementById("query").value;
+    console.log(query)
+
+    const api = "AIzaSyAMAFwvqLc9jee8bzxI5o9verFNt4NAEYE";
+    const link = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=${api}`;
+    let res = await fetch(link);
+
+    let data = await res.json();
+    console.log(data.items)
+    append(data.items)
+
+}
+
+let append =  (data)=> {
+
+let container = document.getElementById("box");
+container.innerHTML = null;
+
+    data.forEach(({id : {videoId},snippet : {title,channelTitle,thumbnails}}) =>{
+
+        console.log(videoId);
+        console.log(title);
+
+        let div = document.createElement("div");
+
+        let iframe = document.createElement("iframe");
+        iframe.setAttribute("src",`https://www.youtube.com/embed/${videoId}`);
+        iframe.allow = "fullscreen"
+
+        let h3 = document.createElement("p");
+        h3.innerText = title;
+        h3.style.width = "100%";
+        h3.style.fontWeight = "bold";
+
+        let h4 = document.createElement("p");
+        h4.innerText = channelTitle;
+        h4.style.fontSize ="10px";
+        h4.style.color = "grey";
+
+        div.append(iframe,h3,h4);
+
+        let video = {
+            title,
+            videoId,
+        };
+
+        div.onclick  = () => {
+            playVideo(video)
+        }
+
+        container.append(div)
+    })
+
+};
+
+let playVideo = (video) => {
+    console.log(video)
+    localStorage.setItem("video",JSON.stringify(video))
+    window.location.href = "video.html"
+}
+    
+    
+
+
+</script>
